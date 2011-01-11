@@ -1,4 +1,4 @@
-{ "name" : "barricaneWS"
+{ "name" : "barricane-server"
 , "description" : "A NodeJS-based web server."
 , "version" : "0.0.1"
 , "maintainers" :
@@ -6,15 +6,15 @@
     , "email": "chris@barricane.com"
     }
   ]
-, "bugs" : { "web" : "http://github.com/chrisdew/barricaneWS/issues" }
+, "bugs" : { "web" : "http://github.com/chrisdew/barricane-server/issues" }
 , "licenses" : [ { "type" : "MIT" } ]
 , "repositories" :
   [ { "type" : "git"
-    , "url" : "http://github.com/chrisdew/barricaneWS"
+    , "url" : "http://github.com/chrisdew/barricane-server"
     }
   ]
-, "main" : "./lib/barricaneWS"
-, "engines" : { "node" : ">=0.2.4" }
+, "main" : "./lib/barricane-server"
+, "engines" : { "node" : ">=0.2.6" }
 , "dependencies" : { "vows" : ">=0.5.2"
                    , "barricaneDB" : ">=0.0.1"
                    }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="http://127.0.0.1:8888/vendor/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8888/vendor/jquery.tmpl.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8888/vendor/knockout-1.1.2.js"></script>
+    <script type="text/javascript" src="http://127.0.0.1:8888/vendor/knockout.mapping-latest.js"></script>
+    <script id="blog_post_tmpl" type="text/x-jquery-tmpl">
+        <p>title: ${ blog_post.title }</p>
+        <p>date: ${ blog_post.date }</p>
+        <p>content: ${ blog_post.content }</p>
+    </script>   
+    <script id="data_placeholder" type="text/javascript">
+        json_data = { blog_post: { title: "first post",
+                                   date: "2011-01-11",
+                                   content: "hello world"
+                                 }
+                    };
+    </script>
+    <script type="text/javascript">
+        if ($ !== undefined) {
+        $(document).ready(function() {
+            var viewModel = ko.mapping.fromJS(json_data);
+            ko.applyBindings(viewModel);
+        });
+        }
+    </script>
+  </head>
+  <body>
+    <h1>test page</h1>
+    <div data-bind="template: 'blog_post_tmpl'"></div>
+  </body>
+</html>
