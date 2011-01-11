@@ -3,7 +3,7 @@
 , "version" : "0.0.1"
 , "maintainers" :
   [ { "name": "Chris Dew"
-    , "email": "chris@barricane.com"
+    , "email": "cmsdew@gmail.com"
     }
   ]
 , "bugs" : { "web" : "http://github.com/chrisdew/barricane-server/issues" }
@@ -16,6 +16,9 @@
 , "main" : "./lib/barricane-server"
 , "engines" : { "node" : ">=0.2.6" }
 , "dependencies" : { "vows" : ">=0.5.2"
-                   , "barricaneDB" : ">=0.0.1"
+                   , "docco" : ">=0.3.0"
+                   , "jsdom" : ">=0.1.23"
+                   , "nodemon" : ">=0.1.8"
+                   , "socket.io" : ">=0.6.8" 
                    }
 }

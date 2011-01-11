@@ -6,28 +6,37 @@ var jsdom = require("jsdom");
 
 function handler(req, res) {
 	console.log("handler called");
-	jsdom.jQueryify(window, './www/vendor/jquery-1.4.4.min.js', function (window, jquery) {
-		  //window.jQuery('body').append("<div class='testing'>Hello World</div>");
-		  console.log(window.jQuery("html").html()); // outputs Hello World
+	jsdom.jQueryify(window, '', function (window, jquery) {
+		  console.log("alpha");
+		  var body = "<html>" + window.jQuery("html").html() + "</html>";
+		  console.log(body); 
+	      res.writeHead(200, [ ["Content-Type", "text/html"]
+		                      , ["Content-Length", body.length]
+		                      ] );
+		  res.write(body, "utf8");
+		  res.end();
+		  console.log("omega");
 	});
-	return false;
 }
 
-var server = wina.createServer('./www', handler);
+var server = wina.createServer('./www');
 wina.get("/static", handler);
 
 
 server.listen(8888, "0.0.0.0");
 
-var doc = readFileSync("./www/index.html", "utf8");
+var file = readFileSync("./www/index.html", "utf8");
 console.log("A");
-var window = jsdom.jsdom(doc, false, {url: "http://127.0.0.1:8888/"}).createWindow();
+var doc = jsdom.jsdom(file);
+console.log("A1", doc.createWindow);
+var window = doc.createWindow();
 console.log("B", window);//.$('html').html());
+/*
 jsdom.jQueryify(window, function() {
 	  window.jQuery('body').append("<div class='testing'>Hello World, It works!</div>");
 	  console.log("C", window.jQuery(".testing").text());
 	});
-
+*/
 
 console.log("D");
 

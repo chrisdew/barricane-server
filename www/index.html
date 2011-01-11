@@ -20,6 +20,7 @@
     <script type="text/javascript">
         if ($ !== undefined) {
         $(document).ready(function() {
+            //$("#chop").html("");
             var viewModel = ko.mapping.fromJS(json_data);
             ko.applyBindings(viewModel);
         });
@@ -28,6 +29,6 @@
   </head>
   <body>
     <h1>test page</h1>
-    <div data-bind="template: 'blog_post_tmpl'"></div>
+    <div id="chop" data-bind="template: 'blog_post_tmpl'"></div>
   </body>
 </html>
