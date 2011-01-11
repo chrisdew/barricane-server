@@ -2,9 +2,7 @@ var http = require('http');
 var io = require('socket.io');
 var wina = require('./wina.js');
 var readFileSync = require("fs").readFileSync;
-var jsdom = require("jsdom")
-
-
+var jsdom = require("jsdom");
 
 function handler(req, res) {
 	console.log("handler called");
@@ -21,7 +19,7 @@ wina.get("/static", handler);
 
 server.listen(8888, "0.0.0.0");
 
-var doc = readFileSync("./www/index.html", "utf8")
+var doc = readFileSync("./www/index.html", "utf8");
 console.log("A");
 var window = jsdom.jsdom(doc, false, {url: "http://127.0.0.1:8888/"}).createWindow();
 console.log("B", window);//.$('html').html());
