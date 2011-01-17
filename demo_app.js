@@ -1,5 +1,4 @@
 var http = require('http');
-var io = require('socket.io');
 var wina = require('./wina.js');
 var readFileSync = require("fs").readFileSync;
 var jsdom = require("jsdom");

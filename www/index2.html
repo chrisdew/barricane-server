@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript">
+    	alert($);
+    </script>
+    <script type="text/javascript" src="/vendor/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="/vendor/jquery.tmpl.js"></script>
+    <script type="text/javascript" src="/vendor/knockout-1.1.2.js"></script>
+    <script type="text/javascript" src="/vendor/knockout.mapping-latest.js"></script>
+    <script id="blog_post_tmpl" type="text/x-jquery-tmpl">
+        <p>title: ${ blog_post.title }</p>
+        <p>date: ${ blog_post.date }</p>
+        <p>content: ${ blog_post.content }</p>
+    </script>
+    <script id="data_placeholder" type="text/javascript">
+        json_data = { blog_post: { title: "first post",
+                                   date: "2011-01-11",
+                                   content: "hello world"
+                                 }
+                    };
+    </script>
+  </head>
+  <body>
+    <h1>test page</h1>
+    <div id="chop" data-bind="template: 'blog_post_tmpl'"></div>
+  </body>
+</html>
